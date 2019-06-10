@@ -1,0 +1,4 @@
+notebook
+pathlib2
+pigar
+psutil
