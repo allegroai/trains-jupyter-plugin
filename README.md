@@ -1,5 +1,10 @@
 # [TRAINS](https://github.com/allegroai/trains) Jupyter Plugin
 
+[![GitHub license](https://img.shields.io/github/license/allegroai/trains-jupyter-plugin.svg)](https://img.shields.io/github/license/allegroai/trains-jupyter-plugin.svg)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/trains-jupyter-plugin.svg)](https://img.shields.io/pypi/pyversions/trains-jupyter-plugin.svg)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)
+[![PyPI status](https://img.shields.io/pypi/status/trains-jupyter-plugin.svg)](https://pypi.python.org/pypi/trains-jupyter-plugin/)
+
 trains-jupyter-plugin is a jupyter notebook extension enabling users to push ipython notebooks to git repository.
 The git [button](#Screenshots) is displayed in the notebook toolbar. After saving any notebook
 the user can push notebook to pre-specified git repository.
