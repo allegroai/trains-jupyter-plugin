@@ -5,10 +5,12 @@
 [![PyPI version shields.io](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)
 [![PyPI status](https://img.shields.io/pypi/status/trains-jupyter-plugin.svg)](https://pypi.python.org/pypi/trains-jupyter-plugin/)
 
-trains-jupyter-plugin is a jupyter notebook extension enabling users to push ipython notebooks to git repository.
-The git [button](#Screenshots) is displayed in the notebook toolbar. After saving any notebook
-the user can push notebook to pre-specified git repository.
-Currently this extension supports commits to a pre initialized git repository and pre-defined branch.
+TRAINS-jupyter-plugin is a jupyter notebook extension enabling users to push ipython notebooks to git repository,
+using the git [button](#Screenshots) added to the notebook toolbar. 
+
+After saving a notebook, a user can push the notebook to a pre-specified git repository.
+Currently this extension supports commits to a pre-initialized git repository on a pre-defined branch.
+
 The notebook will be pushed to the git repository, based on the folder structure it is located in.
 The notebook will also be converted to `.py` script and pushed together with the `.ipynb`.
 Additionally, a `requirements.txt` will be created and updated according to the notebook imports. 
@@ -30,6 +32,7 @@ repo2/
 
 
 Selection of a specific branch is done using git checkout from the jupyter host machine.
+
 For example, switch to branch2 in repo2:
 ```
 $ cd ~/repo2
