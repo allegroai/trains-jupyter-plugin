@@ -72,11 +72,11 @@ jupyter nbextension enable --py trains-jupyter-plugin
 
 ## Screenshots
 
-![Extension](docs/extension.png?raw=true "Extension added to toolbar")
+![Extension](https://github.com/allegroai/trains-jupyter-plugin/blob/master/docs/extension.png?raw=true "Extension added to toolbar")
 
-![Commit Message](docs/commit.png?raw=true "Commit Message")
+![Commit Message](https://github.com/allegroai/trains-jupyter-plugin/blob/master/docs/commit.png?raw=true "Commit Message")
 
-![Success Message](docs/success.png?raw=true "Success Message")
+![Success Message](https://github.com/allegroai/trains-jupyter-plugin/blob/master/docs/success.png?raw=true "Success Message")
 
 ## Credits
 
