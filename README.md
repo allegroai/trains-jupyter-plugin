@@ -5,19 +5,17 @@
 [![PyPI version shields.io](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)
 [![PyPI status](https://img.shields.io/pypi/status/trains-jupyter-plugin.svg)](https://pypi.python.org/pypi/trains-jupyter-plugin/)
 
-TRAINS-jupyter-plugin is a jupyter notebook extension enabling users to push ipython notebooks to git repository,
-using the git [button](#Screenshots) added to the notebook toolbar. 
+**trains-jupyter-plugin** is a jupyter notebook extension enabling users to push ipython notebooks to a git repository,
+using the git [button](#Screenshots) added to the notebook toolbar.
 
-After saving a notebook, a user can push the notebook to a pre-specified git repository.
-Currently this extension supports commits to a pre-initialized git repository on a pre-defined branch.
+After saving a notebook, a user can push the notebook to a predefined git repository. The extension currently supports pushing to a predefined branch in the repository.
 
-The notebook will be pushed to the git repository, based on the folder structure it is located in.
-The notebook will also be converted to `.py` script and pushed together with the `.ipynb`.
-Additionally, a `requirements.txt` will be created and updated according to the notebook imports. 
-The requirements file will also be pushed to the git.
+When clicking the *version-control* button:
+* The notebook `.ipynb` file will be pushed to the git repository based on the folder structure in which it is located
+* The notebook will also be converted to a `.py` script, pushed alongside the `.ipynb` file
+* A `requirements.txt` will be created and updated according to the notebook imports, and pushed alongside the `.ipynb` file
 
-
-Examples of two repositories: "notebook1.ipynb" will be pushed to "repo1" and "notebook2.ipynb" to "repo2":
+For example, if you have two repositories:
 ```
 repo1/
 ├── .git
@@ -30,20 +28,21 @@ repo2/
    └── notebook2.ipynb
 ```
 
+`notebook1.ipynb` will be pushed to the `repo1` repository, and `notebook2.ipynb` will be pushed to the `repo2` repository.
 
-Selection of a specific branch is done using git checkout from the jupyter host machine.
+In order to select the predefined branch into which the files will be pushed, use `git checkout` on the jupyter host machine.
 
-For example, switch to branch2 in repo2:
+For example, switch to `branch2` in `repo2`:
 ```
 $ cd ~/repo2
 $ git checkout branch2
 ```
-From this point onwards the jupyter notebook push will be done to "branch2"
+From this point onwards the jupyter notebook push will be done to the `branch2` branch in the `repo2` repository.
 
 
-## Installation
+## Installation <a name="installation"></a>
 
-You can install directly from pypi:
+Install directly from pypi:
 
 ```
 pip install trains-jupyter-plugin
@@ -63,14 +62,14 @@ To enable the extension for all notebooks:
 jupyter nbextension enable --py trains-jupyter-plugin
 ```
 
-## Steps
+## How to use
 
-* Install package using above commands
-* Clone your Git repository to a folder that will be assigned to a specific user 
+* Install package using the commands [above](#installation)
+* Clone your git repository to a folder that will be assigned to a specific user
 * Checkout a specific branch for the current user
-* Make sure git is configured with the correct credentials 
-(it is advised to verify there is need to for password/passphrase when pushing)
-* Run jupyter notebook 
+* Make sure git is configured with the correct credentials
+(we recommend verifying a password/passphrase is required when pushing)
+* Run jupyter notebook
 * Any commit/push of notebooks from this specific folder will be done to the selected branch
 
 ## Screenshots
@@ -83,4 +82,4 @@ jupyter nbextension enable --py trains-jupyter-plugin
 
 ## Credits
 
-Thanks to https://github.com/Lab41/sunny-side-up & https://github.com/sat28/githubcommit for laying the foundation of this extension.
+Thanks to [Lab41/sunny-side-up](https://github.com/Lab41/sunny-side-up) & [sat28/githubcommit](https://github.com/sat28/githubcommit) for laying the foundations for this extension.
