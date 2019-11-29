@@ -11,7 +11,7 @@ requirements = (here / 'requirements.txt').read_text().splitlines()
 
 setup(
     name="trains-jupyter-plugin",
-    version='0.2.0',
+    version='0.2.1',
     url="https://github.com/allegroai/trains-jupyter-plugin",
     author="Allegro.ai",
     description="Jupyter extension to enable users to commit & push notebooks to a git repo",

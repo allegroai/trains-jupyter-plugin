@@ -1,12 +1,12 @@
-define(['base/js/namespace','base/js/dialog','jquery'],function(IPython, dialog, $){
+define(['base/js/namespace','base/js/dialog','jquery'],function(Jupyter, dialog, $){
 
     // we will define an action here that should happen when we ask to clear and restart the kernel.
     var git_commit_push  = {
-        help: 'trainsai.io: Commit current notebook and push to git repository',
+        help: 'allegro.ai/trains: Commit current notebook and push to git repository',
         icon : 'fa-code-fork',
         help_index : '',
         handler : function (env) {
-            IPython.notebook.save_notebook();
+            Jupyter.notebook.save_notebook();
             var on_success = undefined;
             var on_error = undefined;
             var gitCredentialsChecked = function() {
@@ -35,6 +35,10 @@ define(['base/js/namespace','base/js/dialog','jquery'],function(IPython, dialog,
             var container = $('#notebook-container');
 
             function on_ok(){
+                console.info(document.cookie)
+                var xsrf = document.cookie.substring(document.cookie.indexOf('_xsrf')+6, (document.cookie+'=').indexOf('=', document.cookie.indexOf('_xsrf')+6))
+                console.info(xsrf)
+
                 var re = /^\/notebooks(.*?)$/;
                 var filepath = window.location.pathname.match(re)[1];
                 var payload = {
@@ -48,6 +52,7 @@ define(['base/js/namespace','base/js/dialog','jquery'],function(IPython, dialog,
                 var settings = {
                     url : '/git/commit',
                     processData : false,
+                    headers: {'X-XSRFTOKEN': xsrf},
                     type : "PUT",
                     dataType: "json",
                     data: JSON.stringify(payload),
@@ -98,8 +103,8 @@ define(['base/js/namespace','base/js/dialog','jquery'],function(IPython, dialog,
                 body: div ,
                 title: 'Commit and Push Notebook',
                 buttons: {
-                    'trainsai.io':{class:'btn btn-link btn-xs pull-left', tabindex: -1,
-                    click: function(){ window.open('https://trainsai.io', '_blank'); } },
+                    'Allegro.ai/TRAINS':{class:'btn btn-link btn-xs pull-left', tabindex: -1,
+                    click: function(){ window.open('https://allegro.ai/trains', '_blank'); } },
                     'Commit and Push':
                             { class:'btn-primary btn-large',
                               click:on_ok,
@@ -117,13 +122,13 @@ define(['base/js/namespace','base/js/dialog','jquery'],function(IPython, dialog,
     function _on_load(){
 
         // log to console
-        console.info('Loaded trainsai.io Jupyter extension: Git Commit and Push');
+        console.info('Loaded allegro.ai/trains Jupyter extension: Git Commit and Push');
 
         // register new action
-        var action_name = IPython.keyboard_manager.actions.register(git_commit_push, 'commit-push', 'jupyter-git');
+        var action_name = Jupyter.actions.register(git_commit_push, 'commit-push', 'jupyter-git');
 
         // add button for new action
-        IPython.toolbar.add_buttons_group([action_name]);
+        Jupyter.toolbar.add_buttons_group([action_name]);
     }
 
     return {load_ipython_extension: _on_load };
