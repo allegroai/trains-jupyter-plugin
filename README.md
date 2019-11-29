@@ -50,7 +50,6 @@ pip install trains-jupyter-plugin
 if [ ! -f ~/.jupyter/jupyter_notebook_config.py ]; then
    jupyter notebook --generate-config
 fi
-echo 'c.NotebookApp.disable_check_xsrf = True' >> ~/.jupyter/jupyter_notebook_config.py
 
 jupyter serverextension enable --py trains-jupyter-plugin
 sudo jupyter nbextension install --py trains-jupyter-plugin
