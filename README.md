@@ -5,6 +5,11 @@
 [![PyPI version shields.io](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)](https://img.shields.io/pypi/v/trains-jupyter-plugin.svg)
 [![PyPI status](https://img.shields.io/pypi/status/trains-jupyter-plugin.svg)](https://pypi.python.org/pypi/trains-jupyter-plugin/)
 
+---
+### ‼️ Deprecation notice: As JupyterLab now includes git integration, there is no longer any need for a special notebook plugin
+
+---
+
 **trains-jupyter-plugin** is a Jupyter Notebook extension which enables you to push ipython notebooks to a git repository,
 using a [git button](#Screenshots) added to the notebook toolbar.
 
